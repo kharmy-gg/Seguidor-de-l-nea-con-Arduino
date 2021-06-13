@@ -1,0 +1,48 @@
+int sensor1=7;
+int sensor2=6;
+int Emotor1=12;
+int Emotor2=8;
+int Smotor1=13;
+int Smotor2=9;
+
+
+
+void setup()
+{
+  pinMode(sensor1, INPUT);
+  pinMode(sensor2, INPUT);
+  pinMode (Emotor1, OUTPUT);
+  pinMode(Emotor2, OUTPUT);
+  pinMode(Smotor1, OUTPUT);
+  pinMode(Smotor2, OUTPUT);
+}
+
+void loop()
+{
+  sensor1=digitalRead(7);
+  sensor2=digitalRead(6);
+  if(sensor1==1&& sensor2==1)
+  {
+    digitalWrite(Emotor1,LOW);
+    digitalWrite(Smotor2,LOW);
+  }
+
+  
+  if(sensor1==1&& sensor2==0)
+  {
+    digitalWrite(Emotor1,HIGH);
+    digitalWrite(Smotor2,LOW);
+  }
+ 
+  if(sensor1==0&& sensor2==1)
+  {
+    digitalWrite(Emotor1,LOW);
+    digitalWrite(Smotor2,HIGH);
+  }
+  
+  if(sensor1==0&& sensor2==0)
+  {
+    digitalWrite(Emotor1,HIGH);
+    digitalWrite(Smotor2,HIGH);
+  }
+}
